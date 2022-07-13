@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     float firstTapTime;
     bool isJump;
 
+    public bool isSlope;
+
     [SerializeField] private float speed = 5f;
     private float newXPos;
 
@@ -68,6 +70,20 @@ public class PlayerController : MonoBehaviour
             playerState = PlayerState.OnRun;
         }
     }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.CompareTag("Slope"))
+        {
+            Debug.Log("TRIGGER ENTER");
+            rb.AddForce(Vector3.up, ForceMode.VelocityChange);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        isSlope = false;
+    }
+
 
     private void Swipe(Vector2 delta)
     {

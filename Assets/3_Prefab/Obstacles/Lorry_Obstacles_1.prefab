@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 9143780928908867853}
   - component: {fileID: 2603545941662552872}
   - component: {fileID: 3919429125184952597}
-  - component: {fileID: 5893331163608741370}
+  - component: {fileID: 4158042949713755269}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Ground
@@ -257,7 +257,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5893331163608741370
+--- !u!54 &4158042949713755269
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,7 +269,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
