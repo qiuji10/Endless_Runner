@@ -49517,13 +49517,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData:
     highscore: 0
-    money: 5000
-    powerupJump: 10
-    powerupShield: 100
+    money: 1000
+    powerupJump: 0
+    powerupShield: 0
     powerupBonus: 0
   jsonData: {fileID: 0}
   filePath: /Resources
-  fileName: /playerdata.dat
+  fileName: /game.dat
   texts:
   - {fileID: 274227693}
   - {fileID: 2017286556}
