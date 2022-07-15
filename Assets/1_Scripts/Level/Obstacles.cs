@@ -5,24 +5,45 @@ using UnityEngine;
 public class Obstacles : MonoBehaviour
 {
     public PlayerState ps;
-    public PlayerController pc;
+    public PlayerCore pc;
+    public AudioData bangSfx;
+    private GameManager gm;
+    private MovingChunk mc;
 
     private void Awake()
     {
-        pc = FindObjectOfType<PlayerController>();
+        gm = FindObjectOfType<GameManager>();
+        pc = FindObjectOfType<PlayerCore>();
+        mc = GetComponentInParent<MovingChunk>();
     }
 
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            if (ps == PlayerState.Whatever)
+            if (pc.IsShield && col.gameObject.GetComponent<PlayerCore>().playerState != ps)
             {
-                Debug.Log("Whatever loseee");
+                AudioManager.instance.PlaySFX(bangSfx, "bang");
+                Transform emptyChunk = PoolerManager.instance.GetEmptyChunk();
+                emptyChunk.position = mc.gameObject.transform.position;
+                emptyChunk.gameObject.SetActive(true);
+                mc.gameObject.SetActive(false);
+                pc.DisableShield();
+                return;
             }
-            else if (col.gameObject.GetComponent<PlayerController>().playerState != ps)
+            else if (ps == PlayerState.Whatever)
             {
-                Debug.Log("Player loseee");
+                AudioManager.instance.PlaySFX(bangSfx, "bang");
+                pc.Anim.SetTrigger("isDie");
+                gm.isPlaying = false;
+                gm.Lose();
+            }
+            else if (col.gameObject.GetComponent<PlayerCore>().playerState != ps)
+            {
+                AudioManager.instance.PlaySFX(bangSfx, "bang");
+                pc.Anim.SetTrigger("isDie");
+                gm.isPlaying = false;
+                gm.Lose();
             }
         }
     }

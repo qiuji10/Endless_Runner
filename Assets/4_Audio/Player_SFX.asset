@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b089fad8e15b06647b8a0a4d89060514, type: 3}
+  m_Name: Player_SFX
+  m_EditorClassIdentifier: 
+  audioList:
+  - clip: {fileID: 8300000, guid: 8dc285e3920cfd74f993731a5e2d2768, type: 3}
+    name: left_right
+    volume: 0.1
+  - clip: {fileID: 8300000, guid: 4c9602086b6663342bca5657ce5d0840, type: 3}
+    name: jump
+    volume: 0.5
+  - clip: {fileID: 8300000, guid: 5c1148a4ee5d8a04584e9b2b42b9e8bc, type: 3}
+    name: roll
+    volume: 0.1
+  - clip: {fileID: 8300000, guid: 39d6b2f06bb573a4eab1143b71783a59, type: 3}
+    name: sigh
+    volume: 0.4
+  - clip: {fileID: 8300000, guid: bf92f94ec4cf0b743a5389c86a6a7933, type: 3}
+    name: collect
+    volume: 0.5
+  - clip: {fileID: 8300000, guid: 47dc6fe4951a9c54e85e10e2e8d66623, type: 3}
+    name: pu_jump
+    volume: 1
+  - clip: {fileID: 8300000, guid: 7cfa53855e007554db4f0a1b1ef99788, type: 3}
+    name: pu_shield
+    volume: 1
+  - clip: {fileID: 8300000, guid: 4da5ad9b58f0e6e4cb027c86f7ddb902, type: 3}
+    name: pu_bonus
+    volume: 1

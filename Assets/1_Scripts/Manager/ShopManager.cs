@@ -15,13 +15,12 @@ public class Item
 
 public class ShopManager : MonoBehaviour
 {
-    public GameObject Shop;
     private Database data;
 
     [SerializeField] private Button[] buyButtons;
     [SerializeField] private TMP_Text[] itemsText;
     [SerializeField] private Item jumpPU;
-    [SerializeField] private Item revivePU;
+    [SerializeField] private Item shieldPU;
     [SerializeField] private Item bonusPU;
 
     private int money;
@@ -37,12 +36,12 @@ public class ShopManager : MonoBehaviour
     {
         money = data.playerData.money;
         jumpPU.amount = data.playerData.powerupJump;
-        revivePU.amount = data.playerData.powerupRevive;
+        shieldPU.amount = data.playerData.powerupShield;
         bonusPU.amount = data.playerData.powerupBonus;
 
         itemsText[0].text = money.ToString();
         itemsText[1].text = jumpPU.amount.ToString();
-        itemsText[2].text = revivePU.amount.ToString();
+        itemsText[2].text = shieldPU.amount.ToString();
         itemsText[3].text = bonusPU.amount.ToString();
     }
 
@@ -50,31 +49,34 @@ public class ShopManager : MonoBehaviour
     {
         itemsText[0].text = money.ToString();
         itemsText[1].text = jumpPU.amount.ToString();
-        itemsText[2].text = revivePU.amount.ToString();
+        itemsText[2].text = shieldPU.amount.ToString();
         itemsText[3].text = bonusPU.amount.ToString();
 
         data.playerData.money = money;
         data.playerData.powerupJump = jumpPU.amount;
-        data.playerData.powerupRevive = revivePU.amount;
+        data.playerData.powerupShield = shieldPU.amount;
         data.playerData.powerupBonus = bonusPU.amount;
 
-        data.WriteToJson();
+        data.SaveGame();
+        data.Assigner();
     }
 
     public void BuyJumpPU()
     {
         if (money >= jumpPU.cost)
         {
+            money -= jumpPU.cost;
             jumpPU.amount++;
             UpdateData();
         }
     }
 
-    public void BuyRevivePU()
+    public void BuyShieldPU()
     {
-        if (money >= revivePU.cost)
+        if (money >= shieldPU.cost)
         {
-            revivePU.amount++;
+            money -= shieldPU.cost;
+            shieldPU.amount++;
             UpdateData();
         }
     }
@@ -83,20 +85,9 @@ public class ShopManager : MonoBehaviour
     {
         if (money >= bonusPU.cost)
         {
+            money -= bonusPU.cost;
             bonusPU.amount++;
             UpdateData();
         }
-    }
-
-    [Button]
-    public void ShowShop()
-    {
-        Shop.SetActive(true);
-    }
-
-    [Button]
-    public void CloseShop()
-    {
-        Shop.SetActive(false);
     }
 }

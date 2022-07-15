@@ -44,8 +44,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.55, y: 0.48, z: 1}
-  m_Center: {x: 0.1, y: 0, z: 0}
+  m_Size: {x: 1.4621074, y: 0.48, z: 0.4797562}
+  m_Center: {x: 0.14394633, y: 0, z: -0.01812601}
 --- !u!114 &7450495553161350210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: 3
   pc: {fileID: 0}
+  bangSfx: {fileID: 11400000, guid: 94349607e2168e44092f08f78c03fcee, type: 2}
 --- !u!1 &7450495554346826822
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +103,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7450495554346826822}
-  m_Mesh: {fileID: -1048889802344927098, guid: 3a63d3b91978c3947938468d14e38153, type: 3}
+  m_Mesh: {fileID: 2093663022589485282, guid: 3a63d3b91978c3947938468d14e38153, type: 3}
 --- !u!23 &7450495554346826820
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -156,5 +157,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4, y: 0.5288474, z: 0.01}
-  m_Center: {x: 0.86, y: 0.005585123, z: -0.61}
+  m_Size: {x: 1.6313477, y: 0.5288474, z: 0.00999999}
+  m_Center: {x: 0.77979535, y: 0.0055851145, z: -0.61}

@@ -158,3 +158,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: 3
   pc: {fileID: 0}
+  bangSfx: {fileID: 11400000, guid: 94349607e2168e44092f08f78c03fcee, type: 2}
